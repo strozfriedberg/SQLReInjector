@@ -83,7 +83,7 @@ def havijParse(cur,con):
             exfilRow = exfilRow[exfilRow.rfind("%28")+3:]
             exfilRow = exfilRow.replace(".","_")
 
-           for toReplace in ['0x27','%2C','0x7e','%29']:
+            for toReplace in ['0x27','%2C','0x7e','%29']:
                 if toReplace in exfilRow:
                     exfilRow = exfilRow.replace(toReplace,'')
 
