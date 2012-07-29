@@ -137,7 +137,6 @@ def havijParse(cur,con):
 
 
 def run(inLog, dbFile, website,havijParser,compareToGood, knownGood, cookie, logFormat=""):
-##    logFormat = r"%h %l %u %t \"%r\" %>s %b"
     apacheParser = apachelog.parser(logFormat)
     inLogFd = open(inLog)
     lineCounter = 1
