@@ -1,0 +1,41 @@
+License: SQLReInjector.py is licensed under the LGPL v3.
+
+Updates: Initial commit to github
+
+Requirements: Python 2.7 and apachelog (http://code.google.com/p/apachelog/)
+
+Notes: 
+First presented at DEFCON 20 on Sunday, July 29, at 4:00 PM.
+
+The slides are in this repository with the filename "Defcon Presentation - 20120729.pdf".
+
+This file will contain a link to the video from DEFCON once it's posted.
+
+Basic Usage:
+SQLReInjector.py is designed as a tool to be used in responses to SQL injection attacks.  At a high level, the tool is designed to operate against two components: (1) a virtual machine built off of a forensic image of a compromised server; and (2) the web server logs extracted from that forensic image.
+
+Output is stored in a sqlite database that you can then analyze.
+
+After virtualizing the forensic image and extracting the web server logs, SQLReInjector.py can be run with the following command line options:
+	-i 	--inLog				The web server log containing the SQL injection requests.
+	-d	--dbFile			A sqlite database file the script will use to store its OUTPUT.
+	-w	--website			The URL to the virtualized forensic image.
+	-l	--logFormat			The LogFormat string from the web server's configuration file.
+
+Advanced Usage:
+SQLReInjector can take the following command line arguments:
+	-j	--havijParser		Pass to have SQLReInjector reconstruct the database table as exfiltrated by Havij.
+	-c	--compareToGood		Pass to have SQL ReInjector compare the results of SQL injection requests against a known good.
+	-k	--knownGood			The local HTML copy of a known good version of the attacked site to use for diffs.
+	-e	--cookie			If the webapp requires a session cookie, you can pass one to SQL ReInjector.
+
+The -c and -k flags have to be passed together. The -k flag should point to a local HTML copy of the website that hasn't been affected by an attack.
+
+Support:
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Stroz Friedberg does not offer or provide any support for this
+script.  If you have any questions, comments, or suggestions
+please contact jnovak@strozfriedberg.com.
